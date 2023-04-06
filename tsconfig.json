@@ -13,6 +13,6 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue",".eslintrc.cjs","vite.config.ts","commitlint.config.js"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue",".eslintrc.cjs","vite.config.ts","commitlint.config.cjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

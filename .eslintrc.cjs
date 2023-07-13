@@ -1,4 +1,10 @@
 module.exports = {
+  // global: {
+  //   defineProps: 'readonly',
+  //   defineEmits: 'readonly',
+  //   defineExpose: 'readonly',
+  //   withDefaults: 'readonly'
+  // },
   env: {
     browser: true,
     es2021: true
@@ -8,6 +14,18 @@ module.exports = {
     'standard-with-typescript'
   ],
   overrides: [
+    {
+      files: ['src/views/*.vue', 'src/views/**/*.vue', 'src/layout/*.vue', 'src/layout/**/*.vue'], // 匹配views和二级目录中的index.vue
+      rules: {
+        'vue/multi-word-component-names': 'off'
+      } // 给上面匹配的文件指定规则
+    },
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 'off'
+      }
+    }
   ],
   // parser: 'vue-eslint-parser', // 解析vue
   // parser: '@typescript-eslint/parser',
@@ -23,6 +41,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-    '@typescript-eslint/triple-slash-reference': 'off' // vite-env.d.ts 报错  1:1  error  Do not use a triple slash reference for vite/client, use `import` style instead  @typescript-eslint/triple-slash-reference
+    '@typescript-eslint/triple-slash-reference': 'off', // vite-env.d.ts 报错  1:1  error  Do not use a triple slash reference for vite/client, use `import` style instead  @typescript-eslint/triple-slash-reference
+    '@typescript-eslint/explicit-function-return-type': 'error'
   }
 }

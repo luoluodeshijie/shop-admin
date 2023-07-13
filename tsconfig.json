@@ -9,11 +9,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "DOM", "WebWorker"],
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client"]
+    "types": ["vite/client", "element-plus/global"],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue",".eslintrc.cjs","vite.config.ts","commitlint.config.cjs"],
+  "include": ["src/*.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue",".eslintrc.cjs","vite.config.ts","commitlint.config.cjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
